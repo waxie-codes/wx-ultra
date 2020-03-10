@@ -7,27 +7,30 @@
          </figure>
   </div>
 </div>
-<section class="container">
-  <div class="tile is-ancestor">
-    <div class="tile is-4">
-       <a class="button is-link">Learn More</a>
+<section class="section">
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-4">
+         <a class="button is-link">Learn More</a>
+       </div>
+
+      <div class="tile is-4">
+         <a class="button is-link">Learn More</a>
+       </div>
+
+      <div class="tile is-4">
+        <a class="button is-link">Learn More</a>
+      </div>
      </div>
-
-    <div class="tile is-4">
-       <a class="button is-link">Learn More</a>
-     </div>
-
-    <div class="tile is-4">
-      <a class="button is-link">Learn More</a>
-    </div>
- </div>
+   </div>
+</section>
 
 
-     <div>
+<section class="section">
+     <div class="container">
      <h1 class="title is-2">WAXIE Ultra Products</h1>
      {% for product in products %}
      <h2 class="subtitle is-5"><a href="{{product}}">{{product.title}}</a></h2>
      {% endfor %}
      </div>
-</section>
 {% endblock %}
