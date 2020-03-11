@@ -7,7 +7,9 @@
    {% for product in products %}
    <div class='box'>
      <figure class="image is-64x64">
-       <a href="/{{product}}">{{product.image}}</a>
+       <a href="/{{product.image}}">
+         <img src"{{product.image}}">
+       </a>
      </figure>
      <a href="/{{product}}">{{product.title}}</a>
    </div>
