@@ -10,6 +10,7 @@ site.SITE_LINKS = [
         Link('Warewash', '/warewash'),
         ]
 
+
 @site.register_collection
 class products(Collection):
     pass
@@ -18,9 +19,13 @@ class products(Collection):
 class Index(Page):
     template = 'index.html'
 
+
+@site.register_route
+class AllProducts(Page):
+    template = 'all_products.html'
+
     def __init__(self):
         super().__init__()
-        self.products= site.collections['products'].pages
-
+        self.products = site.collections['products'].pages
 
 site.render()
