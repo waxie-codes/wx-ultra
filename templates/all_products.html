@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 
  {% block content %}
- <h1 class="title is-1">WAXIE ULTRA Products</h1>
  <section class="section">
    <div class="container">
+   <h1 class="title is-1">WAXIE ULTRA Products</h1>
    {% for product in products %}
-   <div class="card">
-     <div class="card-image">
-     <figure class="image is-64x64">
-       <a href="/{{product.image}}">
-         <img src"{{product.image}}">
-       </a>
-     </figure>
+     <div class="card">
+       <div class="card-image">
+       <figure class="image is-64x64">
+         <a href="/{{product.image}}">
+           <img src"{{product.image}}">
+         </a>
+       </figure>
+       </div>
+       <div class="card-content">
+         <h1 class="title"><a href="/{{product}}">{{product.title}}</a></h1>
+       </div>
      </div>
-     <div class="card-content">
-       <h1 class="title"><a href="/{{product}}">{{product.title}}</a></h1>
-     </div>
-   </div>
-{% endfor %}
+    {% endfor %}
    <div>
  </section>
 {% endblock %}
