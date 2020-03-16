@@ -44,6 +44,36 @@ class Warewashing(Page):
 
 
 @site.register_route
+class Laundry(Page):
+    template = "all_products.html"
+    slug = "all_laundry"
+
+    def __init__(self):
+        super().__init__()
+        self.title = "All Laundry Products"
+        self.products = list(
+            filter(
+                lambda x: getattr(x, "category", "").lower() == "laundry",
+                site.collections["products"].pages,
+            )
+        )
+
+
+class HouseKeeping(Page):
+    template = "all_products.html"
+    slug = "all_housekeeping"
+
+    def __init__(self):
+        super().__init__()
+        self.title = "All HouseKeeping Products"
+        self.products = list(
+            filter(
+                lambda x: getattr(x, "category", "").lower() == "housekeeping",
+                site.collections["products"].pages,
+            )
+        )
+
+@site.register_route
 class Index(Page):
     template = "index.html"
 
