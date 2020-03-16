@@ -59,6 +59,7 @@ class Laundry(Page):
         )
 
 
+@site.register_route
 class HouseKeeping(Page):
     template = "all_products.html"
     slug = "all_housekeeping"
