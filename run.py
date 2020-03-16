@@ -9,7 +9,7 @@ site.SITE_LINKS = [
     Link("Laundry", "/all_laundry"),
     Link("Warewash", "/all_warewash"),
 ]
-
+site.categories = ['', 'Warewash', 'Laundry', 'HouseKeeping']
 
 @site.register_collection
 class products(Collection):

@@ -5,6 +5,13 @@
    <div class="container">
      <div class="box">
        <h1 class="title is-1">{{title}}</h1>
+       <div class="level">
+       {% for category in categories %}
+       <div class="level-item">
+         {{category}}
+       </div>
+       {% endfor %}
+       </div>
      </div>
 
    {% for product in products %}
