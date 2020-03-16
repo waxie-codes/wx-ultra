@@ -5,9 +5,9 @@ site = Site(strict=True)
 site.SITE_TITLE = "WAXIE ULTRA"
 site.SITE_LINKS = [
     Link("Home", "/"),
-    Link("HouseKeeping", "/housekeeping"),
-    Link("Laundry", "/Laundry"),
-    Link("Warewash", "/warewash"),
+    Link("HouseKeeping", "/all_housekeeping"),
+    Link("Laundry", "/all_laundry"),
+    Link("Warewash", "/all_warewash"),
 ]
 
 
