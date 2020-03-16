@@ -23,6 +23,7 @@ class Index(Page):
 @site.register_route
 class AllProducts(Page):
     template = 'all_products.html'
+    title = 'WAXIE ULTRA Products'
 
     def __init__(self):
         super().__init__()
@@ -31,13 +32,14 @@ class AllProducts(Page):
 @site.register_route
 class Warewashing(Page):
     template = 'all_products.html'
-    slug = 'all_warewashing'
+    slug = 'all_warewash'
+    title = 'All Warewash Products'
 
     def __init__(self):
         super().__init__()
         self.products = list(
                 filter(
-                    lambda x:getattr(x, 'category', '').lower() == 'warewashing',
+                    lambda x:getattr(x, 'category', '').lower() == 'warewash',
                     site.collections['products'].pages)
                 )
 
