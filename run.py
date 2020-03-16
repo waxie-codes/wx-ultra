@@ -28,4 +28,17 @@ class AllProducts(Page):
         super().__init__()
         self.products = site.collections['products'].pages
 
+@site.register_route
+class Warewashing(Page):
+    template = 'all_products.html'
+    slug = 'all_warewashing'
+
+    def __init__(self):
+        super().__init__()
+        self.products = list(
+                filter(
+                    lambda x:getattr(x, 'category', '').lower() == 'warewashing',
+                    site.collections['products'].pages)
+                )
+
 site.render()
