@@ -28,13 +28,14 @@ class AllProducts(Page):
         self.products = site.collections["products"].pages
 
 
-@site.register_route
-class Warewashing(Page):
+@site.register_collection
+class Warewashing(Collection):
     template = "all_products.html"
     slug = "all_warewash"
+    content_path =  "content/pages"
 
     def __init__(self, content_path="content/pages/warewashing.md"):
-        super().__init__(content_path=content_path)
+        super().__init__()
         self.products = list(
             filter(
                 lambda x: getattr(x, "category", "").lower() == "warewash",
@@ -42,37 +43,6 @@ class Warewashing(Page):
             )
         )
 
-
-@site.register_route
-class Laundry(Page):
-    template = "all_products.html"
-    slug = "all_laundry"
-
-    def __init__(self):
-        super().__init__()
-        self.title = "All Laundry Products"
-        self.products = list(
-            filter(
-                lambda x: getattr(x, "category", "").lower() == "laundry",
-                site.collections["products"].pages,
-            )
-        )
-
-
-@site.register_route
-class HouseKeeping(Page):
-    template = "all_products.html"
-    slug = "all_housekeeping"
-
-    def __init__(self):
-        super().__init__()
-        self.title = "All HouseKeeping Products"
-        self.products = list(
-            filter(
-                lambda x: getattr(x, "category", "").lower() == "housekeeping",
-                site.collections["products"].pages,
-            )
-        )
 
 @site.register_route
 class Index(Page):
