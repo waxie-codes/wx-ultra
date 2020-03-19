@@ -5,16 +5,16 @@
    <div class="container">
      <div class="box">
        <nav class="navbar">
-         <div class="navbar-brand"
+         <div class="navbar-brand">
            <h1 class="navbar-item title is-1">{{title}}</h1>
          </div>
-       <div class="level">
+         <div class"navbar-menu">
        {% for category in categories %}
-       <div class="level-item">
          {% if category not in title %}
+       <div class="navbar-item">
            {{category}}
-         {% endif %}
        </div>
+         {% endif %}
        {% endfor %}
        </div>
        </nav>
