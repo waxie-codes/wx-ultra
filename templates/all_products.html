@@ -4,7 +4,10 @@
  <section class="section">
    <div class="container">
      <div class="box">
-       <h1 class="title is-1">{{title}}</h1>
+       <nav class="navbar">
+         <div class="navbar-brand"
+           <h1 class="title is-1">{{title}}</h1>
+         </div>
        <div class="level">
        {% for category in categories %}
        <div class="level-item">
@@ -14,6 +17,7 @@
        </div>
        {% endfor %}
        </div>
+       </nav>
      </div>
 
    {% for product in products %}
