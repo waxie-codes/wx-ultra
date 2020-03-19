@@ -33,9 +33,8 @@ class Warewashing(Page):
     template = "all_products.html"
     slug = "all_warewash"
 
-    def __init__(self):
-        super().__init__()
-        self.title = "All Warewash Products"
+    def __init__(self, content_path="content/pages/warewashing.md"):
+        super().__init__(content_path=content_path)
         self.products = list(
             filter(
                 lambda x: getattr(x, "category", "").lower() == "warewash",

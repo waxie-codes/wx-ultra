@@ -20,6 +20,12 @@
        </nav>
      </div>
 
+     <section class="section">
+       <div class="container">
+         {{content}}
+       </div>
+     </section>
+
    {% for product in products %}
      <div class="card">
        <div class="card-image">
@@ -31,7 +37,7 @@
        </div>
        <div class="card-content">
          <h2 class="subtitle is-uppercase is-5">{{product.category}}</h2>
-         <h1 class="title"><a href="/{{product}}">{{product.title}}</a></h1>
+         <h1 class="title is-5"><a href="/{{product}}">{{product.title}}</a></h1>
        </div>
      </div>
     {% endfor %}
