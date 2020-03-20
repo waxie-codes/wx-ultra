@@ -45,7 +45,7 @@
    {% for product in pages %}
    <tr>
    {% if title == 'products' %}
-     <th>Category</th>
+   <th>{{product.category}}</th>
      {% endif %}
      <th>
          <h1 class="title is-5"><a href="/{{product.slug}}">{{product.title}}</a></h1>
