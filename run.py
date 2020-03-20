@@ -22,7 +22,7 @@ class products(Collection):
 
     def __init__(self):
         super().__init__()
-        self.products = sorted( self.pages, key=lambda x:x.category)
+        self.products = list(sorted( self.pages, key=lambda x:x.category))
 
 
 @site.register_route
