@@ -46,7 +46,9 @@
    <tr>
    {% if title == 'products' %}
    <th>{{product.category}}</th>
-     {% endif %}
+   {% else %}
+   <th>{{product.waxie_item_number}}</th>
+   {% endif %}
      <th>
          <h1 class="title is-5"><a href="/{{product.slug}}">{{product.title}}</a></h1>
      </th>
