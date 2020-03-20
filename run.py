@@ -20,6 +20,10 @@ class products(Collection):
     _archive_slug = 'all_products.html'
     subcollections = ['category']
 
+    def __init__(self):
+        super().__init__()
+        products = sorted( self.pages, key=lambda x:x.category)
+
 
 @site.register_route
 class Index(Page):
