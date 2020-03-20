@@ -32,6 +32,9 @@
        <table class="table is-bordered is-fullwidth">
          <thead>
            <tr>
+             {% if title == 'products' %}
+               <th>Category</th>
+               {% endif %}
              <th>Product</th>
              <th>SDS</th>
              <th>Spec Sheet</th>
@@ -41,6 +44,9 @@
          <tbody>
    {% for product in pages %}
    <tr>
+   {% if title == 'products' %}
+     <th>Category</th>
+     {% endif %}
      <th>
          <h1 class="title is-5"><a href="/{{product.slug}}">{{product.title}}</a></h1>
      </th>
