@@ -17,6 +17,7 @@ class products(Collection):
     has_archive = True
     template = "page.html"
     _archive_template = "all_products.html"
+    _archive_slug = 'all_products.html'
     subcollections = ['category']
 
 
