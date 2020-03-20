@@ -14,34 +14,10 @@ site.categories = ['', 'Warewash', 'Laundry', 'HouseKeeping']
 
 @site.register_collection
 class products(Collection):
-    pass
-
-
-@site.register_route
-class AllProducts(Page):
-    template = "all_products.html"
-    slug = "all_products"
-
-    def __init__(self):
-        super().__init__()
-        self.title = "WAXIE ULTRA Products"
-        self.products = site.collections["products"].pages
-
-
-@site.register_collection
-class Warewashing(Collection):
-    template = "all_products.html"
-    slug = "all_warewash"
-    content_path =  "content/pages"
-
-    def __init__(self, content_path="content/pages/warewashing.md"):
-        super().__init__()
-        self.products = list(
-            filter(
-                lambda x: getattr(x, "category", "").lower() == "warewash",
-                site.collections["products"].pages,
-            )
-        )
+    has_archive = True
+    template = "page.html"
+    _archive_template = "all_products.html"
+    subcollections = ['category']
 
 
 @site.register_route
