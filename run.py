@@ -20,7 +20,6 @@ class Products(Collection):
     _archive_slug = 'all_products.html'
     _archive_template = 'all_products.html'
 
-
 @site.register_route
 class Index(Page):
     template = "index.html"
