@@ -46,8 +46,6 @@ class Laundry(Page):
     def __init__(self):
         self.pages = [x for x in Products().pages if x.category == 'laundry']
         super().__init__()
-        logging.warning(Path(self.content_path).read_text())
-
 
 
 class Warewash(Page):
