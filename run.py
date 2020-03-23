@@ -30,7 +30,7 @@ class HouseKeeping(Page):
     products = [x for x in Products().pages if x.category == 'housekeeping']
 
 @site.register_route
-class HouseKeeping(Page):
+class Laundry(Page):
     title = 'All Laundry'
     slug = 'all_laundry'
     content_path = "content/pages/Laundry.html"
@@ -38,10 +38,10 @@ class HouseKeeping(Page):
     products = [x for x in Products().pages if x.category == 'laundry']
 
 @site.register_route
-class HouseKeeping(Page):
-    title = 'All WareWashing'
-    slug = 'all_warewashing'
-    content_path = "content/pages/warewashing.html"
+class Warewash(Page):
+    title = 'All Warewash'
+    slug = 'all_warewash'
+    content_path = "content/pages/warewash.html"
     template = 'all_products.html'
-    products = [x for x in Products().pages if x.category == 'warewashing']
+    products = [x for x in Products().pages if x.category == 'warewash']
 site.render()
