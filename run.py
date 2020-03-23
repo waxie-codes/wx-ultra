@@ -23,10 +23,25 @@ class Index(Page):
 
 @site.register_route
 class HouseKeeping(Page):
-    title = 'Housekeeping'
-    content_path = "pages/all_housekeeping.html"
+    title = 'All Housekeeping'
+    slug = 'all_housekeeping'
+    content_path = "content/pages/housekeeping.html"
     template = 'all_products.html'
     products = [x for x in Products().pages if x.category == 'housekeeping']
 
+@site.register_route
+class HouseKeeping(Page):
+    title = 'All Laundry'
+    slug = 'all_laundry'
+    content_path = "content/pages/Laundry.html"
+    template = 'all_products.html'
+    products = [x for x in Products().pages if x.category == 'laundry']
 
+@site.register_route
+class HouseKeeping(Page):
+    title = 'All WareWashing'
+    slug = 'all_warewashing'
+    content_path = "content/pages/warewashing.html"
+    template = 'all_products.html'
+    products = [x for x in Products().pages if x.category == 'warewashing']
 site.render()
