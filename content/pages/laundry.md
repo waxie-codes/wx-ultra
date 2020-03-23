@@ -1,4 +1,4 @@
-title: All Laundry Products
+title: Laundry
 slug: all_laundry
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius facilisis orci id eleifend. Praesent cursus varius rutrum. Nulla fringilla rhoncus sollicitudin. Etiam sollicitudin vitae augue sed mollis. Duis vulputate vestibulum venenatis. Mauris nec tempor turpis. Morbi gravida, ante vitae sollicitudin condimentum, turpis nibh pellentesque nulla, ac posuere leo dui vitae urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam ultricies tellus leo, quis cursus quam mattis a. Integer ac leo lacus. Nulla ac fermentum neque, maximus pharetra metus.

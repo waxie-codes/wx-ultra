@@ -1,6 +1,7 @@
 import logging
 from render_engine.links import Link
 from render_engine import Site, Page, Collection
+from pathlib import Path
 
 site = Site(strict=True)
 site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
@@ -45,6 +46,7 @@ class Laundry(Page):
     def __init__(self):
         self.pages = [x for x in Products().pages if x.category == 'laundry']
         super().__init__()
+        logging.warning(Path(self.content_path).read_text())
 
 
 
