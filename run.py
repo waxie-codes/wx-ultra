@@ -14,6 +14,7 @@ site.categories = ['', 'Warewash', 'Laundry', 'HouseKeeping']
 
 class Products(Collection):
     template = 'all_products.html'
+    title = 'Products'
 
 site.register_collection(Products)
 
@@ -23,7 +24,6 @@ class Index(Page):
 
 @site.register_route
 class HouseKeeping(Page):
-    title = 'All Housekeeping'
     slug = 'all_housekeeping'
     content_path = "content/pages/housekeeping.html"
     template = 'all_products.html'
@@ -31,7 +31,6 @@ class HouseKeeping(Page):
 
 @site.register_route
 class Laundry(Page):
-    title = 'All Laundry'
     slug = 'all_laundry'
     content_path = "content/pages/Laundry.html"
     template = 'all_products.html'
@@ -39,7 +38,6 @@ class Laundry(Page):
 
 @site.register_route
 class Warewash(Page):
-    title = 'All Warewash'
     slug = 'all_warewash'
     content_path = "content/pages/warewash.html"
     template = 'all_products.html'
