@@ -1,4 +1,4 @@
-title: All housekeeping Products
+title: Housekeeping
 slug: all_housekeeping
 
 

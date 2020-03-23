@@ -12,11 +12,14 @@ site.SITE_LINKS = [
 ]
 site.categories = ['', 'Warewash', 'Laundry', 'HouseKeeping']
 
+@site.register_collection
 class Products(Collection):
-    template = 'all_products.html'
+    template = 'page.html'
     title = 'Products'
+    has_archive = True
+    _archive_slug = 'all_products.html'
+    _archive_template = 'all_products.html'
 
-site.register_collection(Products)
 
 @site.register_route
 class Index(Page):
@@ -25,21 +28,32 @@ class Index(Page):
 @site.register_route
 class HouseKeeping(Page):
     slug = 'all_housekeeping'
-    content_path = "content/pages/housekeeping.html"
+    content_path = "content/pages/housekeeping.md"
     template = 'all_products.html'
-    products = [x for x in Products().pages if x.category == 'housekeeping']
+
+    def init(self):
+        super().__init__()
+        self.products = [x for x in Products().pages if x.category == 'housekeeping']
+        print(self.products)
 
 @site.register_route
 class Laundry(Page):
     slug = 'all_laundry'
-    content_path = "content/pages/Laundry.html"
+    content_path = "content/pages/Laundry.md"
     template = 'all_products.html'
-    products = [x for x in Products().pages if x.category == 'laundry']
+
+    def init(self):
+        super().__init__()
+        self.products = [x for x in Products().pages if x.category == 'laundry']
 
 @site.register_route
 class Warewash(Page):
     slug = 'all_warewash'
-    content_path = "content/pages/warewash.html"
+    content_path = "content/pages/warewash.md"
     template = 'all_products.html'
-    products = [x for x in Products().pages if x.category == 'warewash']
+
+    def init(self):
+        super().__init__()
+        products = [x for x in Products().pages if x.category == 'warewash']
+
 site.render()
