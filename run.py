@@ -12,20 +12,21 @@ site.SITE_LINKS = [
 ]
 site.categories = ['', 'Warewash', 'Laundry', 'HouseKeeping']
 
-@site.register_collection
-class products(Collection):
-    has_archive = True
-    template = "page.html"
-    _archive_template = "all_products.html"
-    _archive_slug = 'all_products.html'
-    subcollections = ['category']
+class Products(Collection):
+    template = 'all_products.html'
 
-    @staticmethod
-    def _archive_default_sort(cls):
-        return cls.category
+site.register_collection(Products)
 
 @site.register_route
 class Index(Page):
     template = "index.html"
+
+@site.register_route
+class HouseKeeping(Page):
+    title = 'Housekeeping'
+    content_path = "pages/all_housekeeping.html"
+    template = 'all_products.html'
+    products = [x for x in Products().pages if x.category == 'housekeeping']
+
 
 site.render()
