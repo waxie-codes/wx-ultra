@@ -1,3 +1,4 @@
+import logging
 from render_engine.links import Link
 from render_engine import Site, Page, Collection
 
@@ -12,7 +13,6 @@ site.SITE_LINKS = [
 ]
 site.categories = ['', 'Warewash', 'Laundry', 'HouseKeeping']
 
-@site.register_collection
 class Products(Collection):
     template = 'page.html'
     title = 'Products'
@@ -20,38 +20,46 @@ class Products(Collection):
     _archive_slug = 'all_products.html'
     _archive_template = 'all_products.html'
 
+site.register_collection(Products)
+
 @site.register_route
 class Index(Page):
     template = "index.html"
 
-@site.register_route
+
 class HouseKeeping(Page):
     slug = 'all_housekeeping'
     content_path = "content/pages/housekeeping.md"
     template = 'all_products.html'
 
-    def init(self):
+    def __init__(self):
+        self.pages = [x for x in Products().pages if x.category ==
+                'housekeeping']
         super().__init__()
-        self.pages = [x for x in Products().pages if x.category == 'housekeeping']
 
-@site.register_route
 class Laundry(Page):
     slug = 'all_laundry'
     content_path = "content/pages/Laundry.md"
     template = 'all_products.html'
 
-    def init(self):
-        super().__init__()
+    def __init__(self):
         self.pages = [x for x in Products().pages if x.category == 'laundry']
+        super().__init__()
 
-@site.register_route
+
+
 class Warewash(Page):
     slug = 'all_warewash'
     content_path = "content/pages/warewash.md"
     template = 'all_products.html'
 
-    def init(self):
-        super().__init__()
+    def __init__(self):
         self.pages = [x for x in Products().pages if x.category == 'warewash']
+        super().__init__()
+
+
+site.route(HouseKeeping())
+site.route(Warewash())
+site.route(Laundry())
 
 site.render()
