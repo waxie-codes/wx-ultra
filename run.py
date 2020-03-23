@@ -32,8 +32,7 @@ class HouseKeeping(Page):
 
     def init(self):
         super().__init__()
-        self.products = [x for x in Products().pages if x.category == 'housekeeping']
-        print(self.products)
+        self.pages = [x for x in Products().pages if x.category == 'housekeeping']
 
 @site.register_route
 class Laundry(Page):
@@ -43,7 +42,7 @@ class Laundry(Page):
 
     def init(self):
         super().__init__()
-        self.products = [x for x in Products().pages if x.category == 'laundry']
+        self.pages = [x for x in Products().pages if x.category == 'laundry']
 
 @site.register_route
 class Warewash(Page):
@@ -53,6 +52,6 @@ class Warewash(Page):
 
     def init(self):
         super().__init__()
-        products = [x for x in Products().pages if x.category == 'warewash']
+        self.pages = [x for x in Products().pages if x.category == 'warewash']
 
 site.render()
