@@ -39,7 +39,7 @@ class HouseKeeping(Page):
 
 class Laundry(Page):
     slug = 'all_laundry'
-    content_path = "content/pages/Laundry.md"
+    content_path = "content/pages/laundry.md"
     template = 'all_products.html'
 
     def __init__(self):
