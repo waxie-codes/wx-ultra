@@ -21,6 +21,10 @@ class Products(Collection):
     _archive_slug = 'all_products.html'
     _archive_template = 'all_products.html'
 
+    @staticmethod
+    def _archive_default_sort(cls):
+        return cls.category
+
 site.register_collection(Products)
 
 @site.register_route
