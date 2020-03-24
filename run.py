@@ -38,8 +38,9 @@ class HouseKeeping(Page):
     template = 'all_products.html'
 
     def __init__(self):
-        self.pages = [x for x in Products().pages if x.category ==
+        pages = [x for x in Products().pages if x.category ==
                 'housekeeping']
+        self.pages = list(sorted(pages, key=lambda x:x.waxie_item_number))
         super().__init__()
 
 class Laundry(Page):
@@ -48,7 +49,8 @@ class Laundry(Page):
     template = 'all_products.html'
 
     def __init__(self):
-        self.pages = [x for x in Products().pages if x.category == 'laundry']
+        pages = [x for x in Products().pages if x.category == 'laundry']
+        self.pages = list(sorted(pages, key=lambda x:x.waxie_item_number))
         super().__init__()
 
 
@@ -58,7 +60,8 @@ class Warewash(Page):
     template = 'all_products.html'
 
     def __init__(self):
-        self.pages = [x for x in Products().pages if x.category == 'warewash']
+        pages = [x for x in Products().pages if x.category == 'warewash']
+        self.pages = list(sorted(pages, key=lambda x:x.waxie_item_number))
         super().__init__()
 
 
