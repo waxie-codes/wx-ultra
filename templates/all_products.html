@@ -49,8 +49,8 @@
          <tbody>
    {% for product in pages %}
    <tr>
-   {% if title == 'products' %}
-   <th>{{product.category}}</th>
+   {% if title == 'Products' %}
+   <th>{{product.category.upper()}}</th>
    {% else %}
    <th>{{product.waxie_item_number}}</th>
    {% endif %}
