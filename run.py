@@ -23,7 +23,7 @@ class Products(Collection):
 
     @staticmethod
     def _archive_default_sort(cls):
-        return (cls.category, cls.waxie_item_number)
+        return (cls.waxie_item_number, cls.category)
 
 site.register_collection(Products)
 
