@@ -50,7 +50,7 @@
    {% for product in pages %}
    <tr>
    {% if title == 'Products' %}
-   <th>{{product.category.upper()}}</th>
+   <th>{{product.category.title()}}</th>
    {% else %}
    <th>{{product.waxie_item_number}}</th>
    {% endif %}
