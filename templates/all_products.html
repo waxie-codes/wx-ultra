@@ -22,6 +22,11 @@
 
      <section class="section">
        <div class="container">
+         {% if image %}
+         <figure class="image">
+           <img src="{{image}}">
+         </figure>
+         {% endif %}
          <div class="content">
            {{content}}
          </div>

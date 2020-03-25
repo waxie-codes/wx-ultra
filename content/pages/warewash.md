@@ -1,4 +1,5 @@
 title: Warewash Programs
+image: /static/images/kitchen.jpg
 
 # Feed Yourself With Flawless Flatware
 
