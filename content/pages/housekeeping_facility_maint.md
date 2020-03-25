@@ -1,4 +1,4 @@
-title: Housekeeping and Facility Maintenance Programs
+title: Housekeeping & Facility Maintenance Programs
 
 # General Cleaning & Equipment Care
 
