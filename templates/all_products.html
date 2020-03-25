@@ -12,7 +12,7 @@
        {% for category in categories %}
          {% if category not in title %}
        <div class="navbar-item">
-         <a href="/all_{{category}}">{{category}}</a>
+         <a href="/{{category.slug}}">{{category}}</a>
        </div>
          {% endif %}
        {% endfor %}
