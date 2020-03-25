@@ -1,5 +1,4 @@
 title: Housekeeping
-slug: all_housekeeping
 
 # General Cleaning & Equipment Care
 

@@ -1,5 +1,4 @@
 title: Laundry
-slug: all_laundry
 
 # Keeping it clean.
 

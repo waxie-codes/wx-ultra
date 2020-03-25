@@ -1,5 +1,4 @@
 title: Warewash
-slug: all_warewash
 
 # Feed Yourself With Flawless Flatware
 
