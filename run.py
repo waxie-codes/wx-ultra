@@ -17,10 +17,8 @@ site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
 site.SITE_TITLE = "WAXIE ULTRA"
 site.SITE_LINKS = [
     Link("Home", "/"),
-    hfm_link,
-    laundry_link,
-    warewash_link,
 ]
+
 site.categories = [
     hfm_link,
     laundry_link,
