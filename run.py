@@ -3,34 +3,45 @@ from render_engine.links import Link
 from render_engine import Site, Page, Collection
 from pathlib import Path
 
+hfm_link = (
+    Link(
+        "HouseKeeping & Facility Maintenance Programs",
+        "/housekeeping_facility_maintenance",
+    ),
+)
+laundry_link = (Link("Laundry Programs", "/laundry"),)
+warewash_link = (Link("Warewash Programs", "/warewash"),)
+
 site = Site(strict=True)
 site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
 site.SITE_TITLE = "WAXIE ULTRA"
 site.SITE_LINKS = [
     Link("Home", "/"),
-    Link("HouseKeeping & Facility Maintenance Programs",
-        "/housekeeping_facility_maintenance"),
-    Link("Laundry Programs", "/laundry"),
-    Link("Warewash Programs", "/warewash"),
+    hfm_link,
+    laundry_link,
+    warewash_link,
 ]
 site.categories = [
-        'Warewash Programs',
-        'Laundry Programs',
-        'HouseKeeping & Facility Maintenance Programs',
-        ]
+    hfm_link,
+    laundry_link,
+    warewash_link,
+]
+
 
 class Products(Collection):
-    template = 'page.html'
-    title = 'Products'
+    template = "page.html"
+    title = "Products"
     has_archive = True
-    _archive_slug = 'all_products.html'
-    _archive_template = 'all_products.html'
+    _archive_slug = "all_products.html"
+    _archive_template = "all_products.html"
 
     @staticmethod
     def _archive_default_sort(cls):
         return (cls.waxie_item_number, cls.category)
 
+
 site.register_collection(Products)
+
 
 @site.register_route
 class Index(Page):
@@ -38,35 +49,35 @@ class Index(Page):
 
 
 class HouseKeeping(Page):
-    slug = 'housekeeping_facility_maintenance'
+    slug = "housekeeping_facility_maintenance"
     content_path = "content/pages/housekeeping_facility_maint.md"
-    template = 'all_products.html'
+    template = "all_products.html"
 
     def __init__(self):
-        pages = [x for x in Products().pages if x.category ==
-                'housekeeping']
-        self.pages = list(sorted(pages, key=lambda x:x.waxie_item_number))
+        pages = [x for x in Products().pages if x.category == "housekeeping"]
+        self.pages = list(sorted(pages, key=lambda x: x.waxie_item_number))
         super().__init__()
 
+
 class Laundry(Page):
-    slug = 'laundry'
+    slug = "laundry"
     content_path = "content/pages/laundry.md"
-    template = 'all_products.html'
+    template = "all_products.html"
 
     def __init__(self):
-        pages = [x for x in Products().pages if x.category == 'laundry']
-        self.pages = list(sorted(pages, key=lambda x:x.waxie_item_number))
+        pages = [x for x in Products().pages if x.category == "laundry"]
+        self.pages = list(sorted(pages, key=lambda x: x.waxie_item_number))
         super().__init__()
 
 
 class Warewash(Page):
-    slug = 'warewash'
+    slug = "warewash"
     content_path = "content/pages/warewash.md"
-    template = 'all_products.html'
+    template = "all_products.html"
 
     def __init__(self):
-        pages = [x for x in Products().pages if x.category == 'warewash']
-        self.pages = list(sorted(pages, key=lambda x:x.waxie_item_number))
+        pages = [x for x in Products().pages if x.category == "warewash"]
+        self.pages = list(sorted(pages, key=lambda x: x.waxie_item_number))
         super().__init__()
 
 

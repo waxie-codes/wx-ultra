@@ -10,9 +10,9 @@
          </div>
          <div class"navbar-menu">
        {% for category in categories %}
-         {% if category not in title %}
+         {% if category.title != title %}
        <div class="navbar-item">
-         <a href="/{{slug}}">{{category}}</a>
+         <a href="{{category.url}}">{{category.name}}</a>
        </div>
          {% endif %}
        {% endfor %}
