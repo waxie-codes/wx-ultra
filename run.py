@@ -3,14 +3,12 @@ from render_engine.links import Link
 from render_engine import Site, Page, Collection
 from pathlib import Path
 
-hfm_link = (
-    Link(
+hfm_link = Link(
         "HouseKeeping & Facility Maintenance Programs",
         "/housekeeping_facility_maintenance",
-    ),
-)
-laundry_link = (Link("Laundry Programs", "/laundry"),)
-warewash_link = (Link("Warewash Programs", "/warewash"),)
+    )
+laundry_link = Link("Laundry Programs", "/laundry")
+warewash_link = Link("Warewash Programs", "/warewash")
 
 site = Site(strict=True)
 site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
