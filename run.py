@@ -51,7 +51,7 @@ class HouseKeeping(Page):
     template = "all_products.html"
 
     def __init__(self):
-        pages = [x for x in Products().pages if x.category == "housekeeping"]
+        pages = [x for x in Products().pages if x.category == "housekeeping & facility maintenance"]
         self.pages = list(sorted(pages, key=lambda x: x.waxie_item_number))
         super().__init__()
 
