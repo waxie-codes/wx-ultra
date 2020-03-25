@@ -8,11 +8,16 @@ site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
 site.SITE_TITLE = "WAXIE ULTRA"
 site.SITE_LINKS = [
     Link("Home", "/"),
-    Link("HouseKeeping", "/all_housekeeping"),
-    Link("Laundry", "/all_laundry"),
-    Link("Warewash", "/all_warewash"),
+    Link("HouseKeeping & Facility Maintenance Programs",
+        "/housekeeping_facility_maintenance"),
+    Link("Laundry Programs", "/laundry"),
+    Link("Warewash Programs", "/warewash"),
 ]
-site.categories = ['', 'Warewash', 'Laundry', 'HouseKeeping']
+site.categories = [
+        'Warewash Programs',
+        'Laundry Programs',
+        'HouseKeeping & Facility Maintenance Programs',
+        ]
 
 class Products(Collection):
     template = 'page.html'
@@ -33,8 +38,8 @@ class Index(Page):
 
 
 class HouseKeeping(Page):
-    slug = 'all_housekeeping'
-    content_path = "content/pages/housekeeping.md"
+    slug = 'housekeeping_facility_maintenance'
+    content_path = "content/pages/housekeeping_facility_maint.md"
     template = 'all_products.html'
 
     def __init__(self):
@@ -44,7 +49,7 @@ class HouseKeeping(Page):
         super().__init__()
 
 class Laundry(Page):
-    slug = 'all_laundry'
+    slug = 'laundry'
     content_path = "content/pages/laundry.md"
     template = 'all_products.html'
 
@@ -55,7 +60,7 @@ class Laundry(Page):
 
 
 class Warewash(Page):
-    slug = 'all_warewash'
+    slug = 'warewash'
     content_path = "content/pages/warewash.md"
     template = 'all_products.html'
 
