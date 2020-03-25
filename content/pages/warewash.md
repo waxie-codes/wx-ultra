@@ -1,4 +1,4 @@
-title: Warewash
+title: Warewash Programs
 
 # Feed Yourself With Flawless Flatware
 

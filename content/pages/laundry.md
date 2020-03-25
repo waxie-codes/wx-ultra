@@ -1,4 +1,4 @@
-title: Laundry
+title: Laundry Programs
 
 # Keeping it clean.
 
