@@ -20,11 +20,13 @@
           {% endfor %}
         </div>
 
+        <div class="navbar-menu">
          {% for link in categories %}
           <div class="navbar-item">
             <a href="{{link.url}}">{{link.name}}</a>
           </div>
           {% endfor %}
+        </div>
       </nav>
     </div>
     {% block content %}
