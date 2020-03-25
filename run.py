@@ -14,9 +14,6 @@ warewash_link = Link("Warewash Programs", "/warewash")
 site = Site(strict=True)
 site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
 site.SITE_TITLE = "WAXIE ULTRA"
-site.SITE_LINKS = [
-    Link("Home", "/"),
-]
 
 site.categories = [
     hfm_link,
