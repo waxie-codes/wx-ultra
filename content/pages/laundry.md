@@ -1,4 +1,5 @@
 title: Laundry Programs
+image: static/images/laundry.jpg
 
 # Keeping it clean.
 
