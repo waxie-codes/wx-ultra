@@ -26,24 +26,24 @@
      </div>
      </div>
 
+   {% if image %}
      <section class="section">
        <div class="container">
-
-         {% if image %}
          <figure class="image">
            <img src="/{{image}}">
          </figure>
-         {% endif %}
-
        </div>
      </section>
+   {% endif %}
 
+   {% if content %}
      <section class="section">
          <div class="content">
            {{content}}
          </div>
        </div>
      </section>
+   {% endif %}
 
      <div class="container">
        <table class="table is-bordered">
