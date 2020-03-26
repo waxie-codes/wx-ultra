@@ -1,4 +1,5 @@
 title: HouseKeeping & Facility Maintenance Programs
+image: "static/images/window_cleaning.jpg"
 
 # General Cleaning & Equipment Care
 
