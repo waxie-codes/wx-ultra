@@ -26,8 +26,8 @@ class Products(Collection):
     template = "page.html"
     title = "Products"
     has_archive = True
-    _archive_slug = "all_products.html"
-    _archive_template = "all_products.html"
+    archive_slug = "all_products.html"
+    archive_template = "all_products.html"
 
     @staticmethod
     def _archive_default_sort(cls):
