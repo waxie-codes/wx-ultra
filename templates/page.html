@@ -5,11 +5,11 @@
   <div class="container">
      <h2 class="subtitle is-5 is-capitalized">{{category}}</h2>
      <h1 class="title is-2">{{title}} <span class="subtitle is-5">{{waxie_item_number}}</span></h1>
-     <div class="columns">
+     <div class="columns is-multiline">
        <div class="column is-narrow">
          <figure class="image">
           {% if image %}
-            <img style="max-height: 400px; max-width: 400px;" src="{{image}}">
+            <img style="height: 400px; width: 400px;" src="{{image}}">
           {% endif %}
         </figure>
        </div>
