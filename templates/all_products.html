@@ -49,31 +49,22 @@
        <table class="table is-bordered">
          <thead>
            <tr>
-             {% if title == 'Products' %}
                <th>Category</th>
-
-               {% else %}
-
                <th>Item Number</th>
-
-               {% endif %}
-             <th>Product</th>
-             <th>SDS</th>
-             <th>Spec Sheet</th>
-             <th>Ingredients</th>
+               <th>Product</th>
+               <th>SDS</th>
+               <th>Spec Sheet</th>
+               <th>Ingredients</th>
            </tr>
          </thead>
          <tbody>
    {% for product in pages %}
    <tr>
-   {% if title == 'Products' %}
    <th>{{product.category.title()}}</th>
-   {% else %}
    <th>{{product.waxie_item_number}}</th>
-   {% endif %}
-     <th>
+   <th>
          <h1 class=""><a href="/{{product.slug}}">{{product.title}}</a></h1>
-     </th>
+   </th>
      <td>
        <a href="{{product.safety_data_sheet}}"><span class="icon"><i class="far fa-file"></i></span></a>
      </td>
