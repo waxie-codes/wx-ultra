@@ -3,7 +3,7 @@
 {% block content %}
 <section class="section">
   <div class="container">
-     <h2 class="subtitle is-5 is-capitalized">{{categories}}</h2>
+     <h2 class="subtitle is-5 is-capitalized">{{category}}</h2>
      <h1 class="title is-2">{{title}} <span class="subtitle is-5">{{waxie_item_number}}</span></h1>
      <div class="columns is-multiline">
        <div class="column is-narrow">
@@ -39,7 +39,7 @@
 <div class="level">
   <div class="level-item">
     {% if category %}
-      <h1 class="title is-5 is-capitalized"><a href="/{{category}}">View More {{category}} Items</a></h1>
+      <h1 class="title is-5 is-capitalized"><a href="/{{categories[category]}}">View More {{category}} Items</a></h1>
     {% endif %}
   </div>
 
