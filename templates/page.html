@@ -39,6 +39,8 @@
   <div class="level-item">
     {% if category %}
     {% for cat in categories %}
+    {{cat.name.lower()}}
+
       {% if cat.name.lower() == category.lower() %}
         <h1 class="title is-5 is-capitalized"><a href="{{cat.url}}">View More {{category}} Items</a></h1>
       {% endif %}
