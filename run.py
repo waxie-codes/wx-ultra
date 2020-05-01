@@ -4,12 +4,12 @@ from render_engine import Site, Page, Collection
 from pathlib import Path
 
 hfm_link = Link(
-        "HouseKeeping & Facility Maintenance Programs",
+        "HouseKeeping & Facility Maintenance",
         "/housekeeping_facility_maintenance",
     )
 
-laundry_link = Link("Laundry Programs", "/laundry")
-warewash_link = Link("Warewash Programs", "/warewash")
+laundry_link = Link("Laundry", "/laundry")
+warewash_link = Link("Warewash", "/warewash")
 
 site = Site(strict=True)
 site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
