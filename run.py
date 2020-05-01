@@ -30,7 +30,7 @@ class Products(Collection):
     archive_template = "all_products.html"
 
     @staticmethod
-    def _archive_default_sort(cls):
+    def archive_default_sort(cls):
         return (cls.category , cls.waxie_item_number)
 
 
