@@ -37,7 +37,7 @@ function search(){
   .then(function (data) {
       let fuse = new Fuse(data, options);
       results = fuse.search(phrase)
-      return results
+      console.log(results)
 
     document.querySelector('.search-results').innerHTML = '';
 
