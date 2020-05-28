@@ -1,0 +1,14 @@
+nav.navbar {
+  padding-top: 1em;
+}
+
+.is-visible {
+  display: block !important;
+}
+
+.is-hidden {
+  display: hidden !important;
+}
+.search-results {
+  display: none;
+}
