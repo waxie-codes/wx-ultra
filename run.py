@@ -41,8 +41,10 @@ site.register_collection(Products)
 
 @site.register_route
 class Index(Page):
-    no_index = True
     template = "index.html"
+
+    def __init__(self):
+        super().__init__(no_index=True)
 
 
 class HouseKeeping(Page):
