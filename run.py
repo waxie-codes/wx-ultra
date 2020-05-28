@@ -41,6 +41,7 @@ site.register_collection(Products)
 
 @site.register_route
 class Index(Page):
+    no_index = True
     template = "index.html"
 
 

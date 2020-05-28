@@ -443,17 +443,13 @@ function addSearchResult(result){
       var a = document.createElement('a');
       a.href = result.item.url;
 
-      var linkText = document.createTextNode(result.item.waxie_item_number + ' - ' + result.item.title)
-    /*  if (result.item.title) {
-        var linkText = document.createTextNode(result.item.title)
-    } */
-
-    // Add the else if there is content with no title
-    /*
-      else {
-        var linkText = document.createTextNode(result.item._content.substring(0, 15) + '...')
+      if (result.item.waxie_item_number) {
+        var linkText = document.createTextNode(result.item.waxie_item_number + ' - ' + result.item.title)
     }
-    */
+
+      else {
+        var linkText = document.createTextNode(result.item.title)
+    }
 
       a.appendChild(linkText)
       div.appendChild(a)
