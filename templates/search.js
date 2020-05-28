@@ -14,7 +14,7 @@ const options = {
   useExtendedSearch: true,
   keys: [
     'title',
-    'waxie_item_number'
+    'waxie_item_number',
     '_content'
   ]
 };
