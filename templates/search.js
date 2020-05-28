@@ -14,6 +14,7 @@ const options = {
   useExtendedSearch: true,
   keys: [
     'title',
+    'waxie_item_number'
     '_content'
   ]
 };
@@ -35,7 +36,8 @@ function search(){
     return response.json()})
   .then(function (data) {
       let fuse = new Fuse(data, options);
-     results = fuse.search(phrase)
+      results = fuse.search(phrase)
+      return results
 
     document.querySelector('.search-results').innerHTML = '';
 
