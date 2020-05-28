@@ -30,6 +30,11 @@
             <a href="/warewash">Warewash Programs</a>
           </div>
           
+          <div class="navbar-item has-dropdown">
+            <input class="input menu-search is-rounded" type="search" placeholder="Search">
+            <div class="search-results navbar-dropdown">
+            </div>
+          </div>
         </div>
       </nav>
     </div>
@@ -38,7 +43,7 @@
    <div class="container">
      <div class="columns">
      <div class="column is-one-third">
-       <h1 class="title">HouseKeeping</h1>
+       <h1 class="title">HouseKeeping &amp; Facility Maintenance Programs</h1>
      </div>
      <div class="column">
        <div class="columns is-multiline">
@@ -72,7 +77,27 @@
      </div>
 
    
+     <section class="section">
+       <div class="container">
+         <figure class="image">
+           <img src="/static/images/window_cleaning.jpg">
+         </figure>
+       </div>
+     </section>
+   
 
+   
+     <section class="section">
+         <div class="content">
+           <h1>General Cleaning &amp; Equipment Care</h1>
+<p>From cleaning to deodorizing, you need versatile products that provide crystal clear results and immaculate performance. Big or small, water access or not, we can help. Our comprehensive line of chemical ancillary products are designed to solve the most common issues associated with the foodservice and hospitality industries.</p>
+<p>We want to make sure your results are spotless, so we give you all the tools to keep everything squeaky clean!</p>
+<p>When you dispense floor care products and fill your spray bottles all from the same dispenser, you have peace of mind that the products are being diluted to the proper mixture every time.</p>
+<p>The metal racks won’t crack or chip, keeping products safe and secure.</p>
+<p>Mop sinks provide the correct chemical dilution every time, as well as the proper way of disposing used mop water.</p>
+         </div>
+       </div>
+     </section>
    
 
      <div class="container">
@@ -245,5 +270,97 @@
     </div>
 </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.0.0"></script>
+<script type="text/javascript">
+
+const options = {
+  // isCaseSensitive: false,
+  // includeScore: false,
+  shouldSort: true,
+  // includeMatches: false,
+  // findAllMatches: false,
+  minMatchCharLength: 3,
+  // location: 0,
+  // threshold: 0.8,
+  // distance: 100,
+  useExtendedSearch: true,
+  keys: [
+    'title',
+    '_content'
+  ]
+};
+
+function search(){
+  const phrase = document.querySelector('.menu-search').value
+
+  if (phrase.length < 3) {
+    hideSearchResultList();
+    return null
+  }
+
+  else {
+    showSearchResultList();
+  }
+
+  fetch('/search.json')
+  .then(function (response){
+    return response.json()})
+  .then(function (data) {
+      let fuse = new Fuse(data, options);
+     results = fuse.search(phrase)
+
+    document.querySelector('.search-results').innerHTML = '';
+
+    for (let result of results.slice(0,5)){
+      addSearchResult(result);
+    }
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+};
+
+function showSearchResultList() {
+  document.querySelector('.search-results').classList.add('is-visible');
+};
+
+function hideSearchResultList() {
+  if (document.querySelector('.search-results').innerHTML) {
+      return null
+  }
+
+  document.querySelector('.search-results').classList.remove('is-visible');
+  document.querySelector('.search-results').classList.add('is-hidden');
+};
+
+function addSearchResult(result){
+      var div = document.createElement('div');
+      div.className = 'navbar-item';
+
+      var a = document.createElement('a');
+      a.href = result.item.url;
+
+      var linkText = document.createTextNode(result.item.title)
+    /*  if (result.item.title) {
+        var linkText = document.createTextNode(result.item.title)
+    } */
+
+    // Add the else if there is content with no title
+    /*
+      else {
+        var linkText = document.createTextNode(result.item._content.substring(0, 15) + '...')
+    }
+    */
+
+      a.appendChild(linkText)
+      div.appendChild(a)
+
+      document.querySelector('.search-results').appendChild(div)
+
+}
+
+document.querySelector('.menu-search').addEventListener('input', search)
+document.querySelector('.menu-search').addEventListener('focusout', hideSearchResultList)
+</script>
   </body>
 </html>

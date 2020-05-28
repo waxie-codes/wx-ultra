@@ -30,6 +30,11 @@
             <a href="/warewash">Warewash Programs</a>
           </div>
           
+          <div class="navbar-item has-dropdown">
+            <input class="input menu-search is-rounded" type="search" placeholder="Search">
+            <div class="search-results navbar-dropdown">
+            </div>
+          </div>
         </div>
       </nav>
     </div>
@@ -38,7 +43,7 @@
    <div class="container">
      <div class="columns">
      <div class="column is-one-third">
-       <h1 class="title">Laundry</h1>
+       <h1 class="title">Laundry Programs</h1>
      </div>
      <div class="column">
        <div class="columns is-multiline">
@@ -55,6 +60,10 @@
          
        
          
+            <div class="column is-narrow">
+               <a href="/laundry">Laundry</a>
+           </div>
+         
        
          
             <div class="column is-narrow">
@@ -68,7 +77,25 @@
      </div>
 
    
+     <section class="section">
+       <div class="container">
+         <figure class="image">
+           <img src="/static/images/laundry.jpg">
+         </figure>
+       </div>
+     </section>
+   
 
+   
+     <section class="section">
+         <div class="content">
+           <h1>Keeping it clean.</h1>
+<p>Freshly laundered linens and textiles are essential to many types of businesses – from foodservice to healthcare facilities. WAXIE has multiple products to assist your business in its quest to clean, deodorize and sanitize all of the laundry. Investing in a full program of WAXIE products can lead to lower costs by streamlining the wash process and taking the guesswork out of what products should be used. Keeping it simple, with WAXIE.</p>
+<p>Whether you have a small single machine laundry facility or a large multi-machine OPL powerhouse, you need products that remove stains and clean linens quickly and consistently. You’re also concerned about your water consumption and environmental impact.</p>
+<p>WAXIE Ultra products are designed with all of this in mind. Easy to handle packaging reduces employee strain, and low dilution rates makes programming and formula building easier than ever. With our custom laundry programs, dispensing technology, service and training you’ll get the right system to keep your laundryfacilities sanitary, safe and protected. And with ongoing preventative maintenance visits we ensure things keep running smoothly and identify potential problems so they don’t become bigger issues.</p>
+         </div>
+       </div>
+     </section>
    
 
      <div class="container">
@@ -343,5 +370,97 @@
     </div>
 </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.0.0"></script>
+<script type="text/javascript">
+
+const options = {
+  // isCaseSensitive: false,
+  // includeScore: false,
+  shouldSort: true,
+  // includeMatches: false,
+  // findAllMatches: false,
+  minMatchCharLength: 3,
+  // location: 0,
+  // threshold: 0.8,
+  // distance: 100,
+  useExtendedSearch: true,
+  keys: [
+    'title',
+    '_content'
+  ]
+};
+
+function search(){
+  const phrase = document.querySelector('.menu-search').value
+
+  if (phrase.length < 3) {
+    hideSearchResultList();
+    return null
+  }
+
+  else {
+    showSearchResultList();
+  }
+
+  fetch('/search.json')
+  .then(function (response){
+    return response.json()})
+  .then(function (data) {
+      let fuse = new Fuse(data, options);
+     results = fuse.search(phrase)
+
+    document.querySelector('.search-results').innerHTML = '';
+
+    for (let result of results.slice(0,5)){
+      addSearchResult(result);
+    }
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+};
+
+function showSearchResultList() {
+  document.querySelector('.search-results').classList.add('is-visible');
+};
+
+function hideSearchResultList() {
+  if (document.querySelector('.search-results').innerHTML) {
+      return null
+  }
+
+  document.querySelector('.search-results').classList.remove('is-visible');
+  document.querySelector('.search-results').classList.add('is-hidden');
+};
+
+function addSearchResult(result){
+      var div = document.createElement('div');
+      div.className = 'navbar-item';
+
+      var a = document.createElement('a');
+      a.href = result.item.url;
+
+      var linkText = document.createTextNode(result.item.title)
+    /*  if (result.item.title) {
+        var linkText = document.createTextNode(result.item.title)
+    } */
+
+    // Add the else if there is content with no title
+    /*
+      else {
+        var linkText = document.createTextNode(result.item._content.substring(0, 15) + '...')
+    }
+    */
+
+      a.appendChild(linkText)
+      div.appendChild(a)
+
+      document.querySelector('.search-results').appendChild(div)
+
+}
+
+document.querySelector('.menu-search').addEventListener('input', search)
+document.querySelector('.menu-search').addEventListener('focusout', hideSearchResultList)
+</script>
   </body>
 </html>
