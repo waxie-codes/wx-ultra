@@ -9,7 +9,7 @@ const options = {
   // findAllMatches: false,
   minMatchCharLength: 3,
   // location: 0,
-  // threshold: 0.8,
+  threshold: 0.8,
   // distance: 100,
   useExtendedSearch: true,
   keys: [
@@ -70,7 +70,7 @@ function addSearchResult(result){
       var a = document.createElement('a');
       a.href = result.item.url;
 
-      var linkText = document.createTextNode(result.item.title)
+      var linkText = document.createTextNode(result.item.waxie_item_number + ' - ' + result.item.title)
     /*  if (result.item.title) {
         var linkText = document.createTextNode(result.item.title)
     } */
