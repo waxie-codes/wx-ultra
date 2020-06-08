@@ -30,14 +30,15 @@ class Products(Collection):
     has_archive = True
     archive_slug = "all_products.html"
     archive_template = "all_products.html"
+    content_path = 'content'
 
     @staticmethod
     def archive_default_sort(cls):
         return (cls.category , cls.waxie_item_number)
 
 
-site.register_collection(Products)
 
+site.register_collection(Products)
 
 @site.register_route
 class Index(Page):
