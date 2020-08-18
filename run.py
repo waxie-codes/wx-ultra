@@ -32,6 +32,7 @@ class Products(Collection):
     archive_slug = "all_products.html"
     archive_template = "all_products.html"
     content_path = 'content'
+    subcollections = ['category']
 
     @staticmethod
     def archive_default_sort(cls):
