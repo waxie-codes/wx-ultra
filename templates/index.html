@@ -25,7 +25,7 @@
       {% for category in categories %}
       <div class="column has-text-centered">
           <div class="box">
-            <h1 class="subtitle is-4">{{category.name}}</h1>
+            <h1 class="subtitle is-4">{{category.name|title}}</h1>
           <a class="button is-link" href="{{category.url}}">Learn More</a>
          </div>
          </div>
@@ -109,6 +109,6 @@
              </div>
          </div>
        </div>
-       <a href="/all_products" class="button is-dark">View WAXIE Ultra Products</a>
+       <a href="/products" class="button is-dark">View WAXIE Ultra Products</a>
      </div>
 {% endblock %}
