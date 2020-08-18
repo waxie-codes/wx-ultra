@@ -17,7 +17,7 @@ site.strict=True
 site.SITE_URL = "https://wultra-hamilton-5d107b.netlify.com"
 site.SITE_TITLE = "WAXIE ULTRA"
 site.search = Fuse
-site.output_path = 'docs'
+site.output_path = Path('docs')
 
 site.categories = [
     hfm_link,
