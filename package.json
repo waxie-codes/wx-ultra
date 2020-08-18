@@ -1,0 +1,26 @@
+{
+  "name": "wx-ultra",
+  "version": "1.0.0",
+  "main": "static/main.scss",
+  "dependencies": {
+    "bulma": "^0.9.0",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url static/main.scss static/base.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waxie-codes/WX-SOLSTA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waxie-codes/WX-SOLSTA/issues"
+  },
+  "homepage": "https://github.com/waxie-codes/WX-SOLSTA#readme",
+  "description": ""
+}
