@@ -9,8 +9,8 @@ hfm_link = Link(
         "./housekeeping-facility-maintenance",
     )
 
-laundry_link = Link("Laundry", "/laundry")
-warewash_link = Link("Warewash", "/warewash")
+laundry_link = Link("Laundry", "./laundry")
+warewash_link = Link("Warewash", "./warewash")
 
 site = Site()
 site.strict=True
